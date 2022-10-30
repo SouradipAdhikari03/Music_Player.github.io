@@ -9,6 +9,8 @@ let progress = document.getElementById('progress');
 const total_duration = document.getElementById("duration")
 let current_time = document.getElementById("current_time");
 const progress_div = document.getElementById("progress_div");
+const repeat =document.getElementById("repeat");
+const shuffle=document.getElementById("shuffle")
 
 
 let isPlaying = false;
@@ -100,6 +102,24 @@ const prevSong = ('click', () => {
     songIndex = (songIndex - 1 + songs.length) % songs.length;
     loadSong(songs[songIndex]);
     PlayMusic();
+})
+
+repeat.addEventListener("click",()=>{
+
+    const time=0;
+
+    music.currentTime=time;
+
+})
+
+shuffle.addEventListener("click",()=>{
+
+    songIndex=Math.floor(Math.random() * 10);
+
+    loadSong(songs[songIndex]);
+
+    PlayMusic();
+
 })
 
 // Progress bar work
